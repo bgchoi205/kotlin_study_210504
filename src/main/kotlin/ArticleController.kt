@@ -30,9 +30,10 @@ class ArticleController{
 
     fun list(rq : Rq) {
         val keyword = rq.getStringParam("keyword", "")
+        val boardId = rq.getIntParam("boardId",0)
         val page = rq.getIntParam("page", 1)
 
-        val filteredArticles = articleRepository.articlesFilter(keyword, page, 5)
+        val filteredArticles = articleRepository.articlesFilter(keyword,boardId, page, 5)
 
 
         for(article in filteredArticles){
