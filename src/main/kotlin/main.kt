@@ -63,6 +63,15 @@ fun main(){
             "/board/add" -> {
                 boardController.add()
             }
+            "/board/list" -> {
+                boardController.list()
+            }
+            "/board/delete" -> {
+                boardController.delete(rq)
+            }
+            "/board/modify" -> {
+                boardController.modify(rq)
+            }
         }
     }
     println("==프로그램 끝==")
